@@ -174,32 +174,32 @@ def get_developer_stats(desarrollador: str):
 # Esta consulta devuelve un diccionario con el nombre del desarrollador como llave y una lista con la cantidad total de registros de rese;as de usuarios que se encuentren categorizados con un análisis de sentimiento como valor positivo o negativo, en caso de no estar categorizados o encontrarse arroja el mensaje "No se encontró información sobre el desarrollador '...'".
 # http://127.0.0.1:8000/developer-reviews-analysis/?desarrollador=Kotoshiro
 
-#@app.get("/developer-reviews-analysis/")
-#def developer_reviews_analysis(desarrollador: str):
+@app.get("/developer-reviews-analysis/")
+def developer_reviews_analysis(desarrollador: str):
     
-#    games = pd.read_parquet(r'C:\Users\Sofi\Desktop\Henry\LABS\Proyecto_STEAM\Data_Clean\games_clean.parquet')
-#    sentiment = pd.read_parquet(r'C:\Users\Sofi\Desktop\Henry\LABS\Proyecto_STEAM\Sentiment_Analysis\Sentiment_Analysis.parquet')
-#    games_copy = games.copy()
-#    sentiment_copy = sentiment.copy()
+    games = pd.read_parquet('./Data_Clean/games_clean.parquet')
+    sentiment = pd.read_parquet('./Sentiment_Analysis/Sentiment_Analysis.parquet')
+    games_copy = games.copy()
+    sentiment_copy = sentiment.copy()
     
-#    merged_data = pd.merge(sentiment_copy, games_copy, left_on='item_id', right_on='id')
+    merged_data = pd.merge(sentiment_copy, games_copy, left_on='item_id', right_on='id')
 
-#    filtered_data = merged_data[merged_data['sentiment_analysis'] != 1]  
+    filtered_data = merged_data[merged_data['sentiment_analysis'] != 1]  
 
-#    grouped_data = filtered_data.groupby(['developer', 'sentiment_analysis']).size().unstack(fill_value=0)
+    grouped_data = filtered_data.groupby(['developer', 'sentiment_analysis']).size().unstack(fill_value=0)
 
-#    if desarrollador in grouped_data.index:
+    if desarrollador in grouped_data.index:
         
-#        developer_reviews = grouped_data.loc[desarrollador]
+        developer_reviews = grouped_data.loc[desarrollador]
 
- #       developer_reviews_list = [
- #           {"Negativas": developer_reviews.get(0, 0)},
- #           {"Positivas": developer_reviews.get(2, 0)}
- #       ]
+        developer_reviews_list = [
+            {"Negativas": developer_reviews.get(0, 0)},
+            {"Positivas": developer_reviews.get(2, 0)}
+        ]
 
-#        return {desarrollador: developer_reviews_list}
-#    else:
- #       return f"No se encontró información sobre el desarrollador {desarrollador}"
+        return {desarrollador: developer_reviews_list}
+    else:
+        return f"No se encontró información sobre el desarrollador {desarrollador}"
 
 
 
