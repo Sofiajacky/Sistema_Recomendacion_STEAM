@@ -17,12 +17,11 @@ Actuamos como Data Scientist y MLOps Engineer en Steam. Comenzamos desde cero pa
 - australian_users_items
 - output_steam_games
 
-### Proceso de [ETL](Data_ETL) :Transformaciones
+### Proceso de [ETL](Data_ETL): Transformaciones
 
 Desanidado: Algunas columnas están anidadas, es decir, tienen un diccionario o una lista como valores en cada fila, las desanidamos para poder realizar algunas de las consultas API.
 
 Eliminar columnas no utilizadas:
-Se eliminan las columnas que no se utilizarán:
 - De output_steam_games: 'publisher','url', 'reviews_url', 'specs', 'early_access', 'tags','title'.
 - De australian_user_reviews: user_url, funny, last_edited, helpful.
 - De australian_users_items: user_url, playtime_2weeks, steam_id, items_count.
