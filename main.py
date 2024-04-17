@@ -171,13 +171,13 @@ def get_developer_stats(desarrollador: str):
 
 #-------------------------------------------------------------------------------------------------------------
 # Consulta 05:
-# Esta consulta devuelve un diccionario con el nombre del desarrollador como llave y una lista con la cantidad total de registros de rese;as de usuarios que se encuentren categorizados con un análisis de sentimiento como valor positivo o negativo, en caso de no estar categorizados o encontrarse arroja el mensaje "No se encontró información sobre el desarrollador '...'".
+# Esta consulta devuelve un diccionario con el nombre del desarrollador como llave y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor positivo o negativo, en caso de no estar categorizados o encontrarse arroja el mensaje "No se encontró información sobre el desarrollador '...'".
 # http://127.0.0.1:8000/developer-reviews-analysis/?desarrollador=Kotoshiro
 
 @app.get("/developer-reviews-analysis/")
 def developer_reviews_analysis(desarrollador: str):
     
-    games = pd.read_parquet('./Data_Clean/games_clean.parquet')
+    games = pd.read_parquet('Data_Clean/games_clean.parquet')
     sentiment = pd.read_parquet('./Sentiment_Analysis/Sentiment_Analysis.parquet')
     games_copy = games.copy()
     sentiment_copy = sentiment.copy()
