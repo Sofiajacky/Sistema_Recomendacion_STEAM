@@ -34,7 +34,7 @@ Cambio del tipo de datos:
 Las fechas se cambian a datetime para luego extraer el año.
 
 ## Feature Engineering
-En el dataset user_reviews se crea la columna 'sentiment_analysis' para reemplazar la de user_reviews.review, aplicando análisis de sentimiento con NLP con la escala: malo:'0', neutral:'1' y positivo:'2'. 
+En el dataset user_reviews se crea la columna 'sentiment_analysis' para reemplazar la de user_reviews, aplicando análisis de sentimiento con NLP con la escala: malo:'0', neutral:'1' y positivo:'2'. 
 
 ### Desarrollo API
 Se disponibilizan los datos de la empresa usando el framework FastAPI, proponiendo las siguientes consultas: 
