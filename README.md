@@ -13,9 +13,9 @@ Actuamos como Data Scientist y MLOps Engineer en Steam. Comenzamos desde cero pa
 
 ## Descripción del proyecto:
 ### Se trabaja con los siguientes datasets:
-australian_user_reviews
-australian_users_items
-output_steam_games
+- australian_user_reviews
+- australian_users_items
+- output_steam_games
 
 ### Proceso de [ETL](Data_ETL) :Transformaciones
 
